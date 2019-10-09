@@ -1,0 +1,52 @@
+/*------------------------------------*\
+  #FILTER-MARKERS-BAR
+\*------------------------------------*/
+
+.filter {
+  @include size(100vw, 150px);
+  @include layout-flex(column, center);
+  /** Design */
+  background: $primary_color;
+  border-radius: 24px 24px 0 0;
+  box-shadow: $card_shadow;
+}
+
+  .filter__btn-drag {
+    @include size(57.4px, 2.9px);
+    background: $secondary_light_color;
+    margin-top: 21px;
+    border-radius: 2px;
+  }
+
+  .filter .text--abstract {
+    margin-top: 14px;
+  }
+  
+  .filter__btn-bar {
+    @include size(calc(100vw - 25px), 80px);
+    @include layout-flex(row, center, space-between);
+  }
+
+    .filter__btn-sep {
+      @include size(1px, 65px);
+      background: #cdcdcd;
+      opacity: 0.5;
+      border-radius: 23px;
+    }
+
+    .filter__btn-filter {
+      @include layout-flex(column, center, center);
+      @include size(20vw, 75px);
+      border-radius: 5px;
+      transition: 1.5s 0 background ease-in-out;
+
+      .text--note {
+        @include size(50px, 22px);
+        @include layout-flex(row, center, center);
+        margin: 5px 0 0 0;
+      }
+
+      &.--is-active{
+        background: #F7F7F7;
+      }
+    }
