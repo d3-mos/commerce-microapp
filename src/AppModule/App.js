@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { OLMapComponent } from './General/OpenLayersMap/OLMapComponent';
 import { FilterMenu } from './StoresFilter/FilterMenu';
+import MapComponent   from './StoresMap/MapComponent'
 
 
 /**
@@ -24,11 +24,11 @@ export class App extends React.Component {
   }
 
 
-  updateMarker(newMarker) {
-    let {markers} = this.state;
-    markers.push(newMarker);
-    this.setState(markers);
-  }
+  //updateMarker(newMarker) {
+  //  let {markers} = this.state;
+  //  markers.push(newMarker);
+  //  this.setState(markers);
+  //}
 
 
   /**
@@ -36,11 +36,11 @@ export class App extends React.Component {
    * https://cloud.google.com/maps-platform/pricing/sheet/?hl=es-419
    */
   componentDidMount() {
-    setTimeout(() => this.updateMarker([-99.1439732,19.4357385]), 1000);
-    setTimeout(() => this.updateMarker([-99.1468056,19.436907]),  2000);
-    setTimeout(() => this.updateMarker([-99.1405306,19.4380755]), 3000);
-    setTimeout(() => this.updateMarker([-99.1410457,19.4379844]), 4000);
-    setTimeout(() => this.updateMarker([-99.14056,19.4339303]),   5000);
+    //setTimeout(() => this.updateMarker([-99.1439732,19.4357385]), 1000);
+    //setTimeout(() => this.updateMarker([-99.1468056,19.436907]),  2000);
+    //setTimeout(() => this.updateMarker([-99.1405306,19.4380755]), 3000);
+    //setTimeout(() => this.updateMarker([-99.1410457,19.4379844]), 4000);
+    //setTimeout(() => this.updateMarker([-99.14056,19.4339303]),   5000);
   }
 
 
@@ -48,8 +48,8 @@ export class App extends React.Component {
    * Render the main application layer.
    */
   render = () => 
-    <React.Fragment>     
-      <OLMapComponent markers={this.state.markers}/>
+    <React.Fragment>
+      <MapComponent/>
       <div className="layout">
         <FilterMenu/>
       </div>
