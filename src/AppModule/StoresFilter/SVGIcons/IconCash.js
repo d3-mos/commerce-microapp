@@ -2,7 +2,7 @@ import React from 'react';
 
 
 export const IconCash = ({width, height}) =>
-  <svg className="icon--svg" xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 29 32">
+  <svg className="icon--svg" xmlns="http://www.w3.org/2000/svg" width="33px" height="32px" viewBox="0 0 29 32">
     <g fill="none" fillRule="evenodd">
         <ellipse cx="14.241" cy="4.423" fill="#A6CE4E" rx="1" ry="1" transform="rotate(-180 14.241 4.423)"/>
         <ellipse cx="14.241" cy=".885" fill="#A6CE4E" rx="1" ry="1" transform="rotate(-180 14.241 .885)"/>

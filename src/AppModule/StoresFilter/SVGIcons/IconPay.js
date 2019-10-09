@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-export const IconPay = ({width, height}) =>
-  <svg className="icon--svg" xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 33 32">
+export const IconPay = () =>
+  <svg className="icon--svg" xmlns="http://www.w3.org/2000/svg" width="33px" height="32px" viewBox="0 0 33 32">
       <g fill="none" fillRule="evenodd">
           <path fill="#A6CE4E" d="M13.649 18h5.088a3.456 3.456 0 0 1 3.456 3.456V32h-12V21.456A3.456 3.456 0 0 1 13.649 18z"/>
           <path stroke="#5A5A5A" strokeWidth="1.5" d="M28.904 10.456a2.706 2.706 0 0 0-2.706-2.706H6.033a2.706 2.706 0 0 0-2.706 2.706v18.088a2.706 2.706 0 0 0 2.706 2.706h20.165a2.706 2.706 0 0 0 2.706-2.706V10.456z"/>

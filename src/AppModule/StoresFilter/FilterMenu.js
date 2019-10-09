@@ -51,7 +51,7 @@ export class FilterMenu extends React.Component {
       atmLoc:  false,
       addLoc:  false,
       promLoc: false,
-      active: false,
+      active:  false,
     }
   }
 
@@ -66,8 +66,14 @@ export class FilterMenu extends React.Component {
   toggleButton = btnRef => 
     () => this.setState({[btnRef]: !this.state[btnRef]});
   
+  /**
+   * Active the filter menu (menu is up) by flag active.
+   */
   upMenu   = () => this.setState({active: true});
 
+  /**
+   * Inactive the filter menu (menu is down) by flag active.
+   */
   downMenu = () => this.setState({active: false});
 
   /**
@@ -76,9 +82,7 @@ export class FilterMenu extends React.Component {
    * @since Oct 8th, 2019.
    */
   render = () =>
-  <Swipeable test
-    onSwipedDown={() => this.downMenu()}
-    onSwipedUp  ={() => this.upMenu()}>
+    <Swipeable onSwipedDown={()=>this.downMenu()} onSwipedUp={()=>this.upMenu()}>
       <div className={`filter ${this.state.active?'--is-active':''}`}>
         <div className="filter__btn-drag"/>
         <p className="text--abstract">
@@ -87,22 +91,22 @@ export class FilterMenu extends React.Component {
         </p>
         <div className="filter__btn-bar">
           <FilterButton 
-            icon  ={<IconPay width={33} height={32}/>}
+            icon  ={<IconPay/>}
             title ="Paga en Comercios"
             active={this.state.payLoc}
             click ={this.toggleButton('payLoc')}/>
           <FilterButton
-            icon  ={<IconCash width={33} height={32}/>}
+            icon  ={<IconCash/>}
             title ="Retirar"
             active={this.state.atmLoc}
             click ={this.toggleButton('atmLoc')}/>
           <FilterButton
-            icon  ={<IconAddMoney width={33} height={32}/>}
+            icon  ={<IconAddMoney/>}
             title ="Agregar Fondos"
             active={this.state.addLoc}
             click ={this.toggleButton('addLoc')}/>
           <FilterButton
-            icon  ={<IconPay width={33} height={32}/>}
+            icon  ={<IconPay/>}
             title ="Promociones"
             active={this.state.promLoc}
             click ={this.toggleButton('promLoc')}
@@ -110,5 +114,5 @@ export class FilterMenu extends React.Component {
             rightSeparator={false}/>
         </div>
       </div>
-  </Swipeable>;
+    </Swipeable>;
 }
