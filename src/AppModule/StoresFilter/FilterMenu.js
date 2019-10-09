@@ -1,4 +1,5 @@
 import React from 'react';
+import { Swipeable }    from 'react-swipeable';
 
 import { IconPay }      from './SVGIcons/IconPay';
 import { IconCash }     from './SVGIcons/IconCash';
@@ -50,6 +51,7 @@ export class FilterMenu extends React.Component {
       atmLoc:  false,
       addLoc:  false,
       promLoc: false,
+      active: false,
     }
   }
 
@@ -64,41 +66,49 @@ export class FilterMenu extends React.Component {
   toggleButton = btnRef => 
     () => this.setState({[btnRef]: !this.state[btnRef]});
   
+  upMenu   = () => this.setState({active: true});
+
+  downMenu = () => this.setState({active: false});
+
   /**
    * Render the filter component.
    * 
    * @since Oct 8th, 2019.
    */
   render = () =>
-    <div className="filter">
-      <div className="filter__btn-drag"/>
-      <p className="text--abstract">
-        Selecciona la opción que quieres
-        para ver el lugar más cercano.
-      </p>
-      <div className="filter__btn-bar">
-        <FilterButton 
-          icon  ={<IconPay width={33} height={32}/>}
-          title ="Paga en Comercios"
-          active={this.state.payLoc}
-          click ={this.toggleButton('payLoc')}/>
-        <FilterButton
-          icon  ={<IconCash width={33} height={32}/>}
-          title ="Retirar"
-          active={this.state.atmLoc}
-          click ={this.toggleButton('atmLoc')}/>
-        <FilterButton
-          icon  ={<IconAddMoney width={33} height={32}/>}
-          title ="Agregar Fondos"
-          active={this.state.addLoc}
-          click ={this.toggleButton('addLoc')}/>
-        <FilterButton
-          icon  ={<IconPay width={33} height={32}/>}
-          title ="Promociones"
-          active={this.state.promLoc}
-          click ={this.toggleButton('promLoc')}
-          titleStyle={{width: 60}}
-          rightSeparator={false}/>
+  <Swipeable test
+    onSwipedDown={() => this.downMenu()}
+    onSwipedUp  ={() => this.upMenu()}>
+      <div className={`filter ${this.state.active?'--is-active':''}`}>
+        <div className="filter__btn-drag"/>
+        <p className="text--abstract">
+          Selecciona la opción que quieres
+          para ver el lugar más cercano.
+        </p>
+        <div className="filter__btn-bar">
+          <FilterButton 
+            icon  ={<IconPay width={33} height={32}/>}
+            title ="Paga en Comercios"
+            active={this.state.payLoc}
+            click ={this.toggleButton('payLoc')}/>
+          <FilterButton
+            icon  ={<IconCash width={33} height={32}/>}
+            title ="Retirar"
+            active={this.state.atmLoc}
+            click ={this.toggleButton('atmLoc')}/>
+          <FilterButton
+            icon  ={<IconAddMoney width={33} height={32}/>}
+            title ="Agregar Fondos"
+            active={this.state.addLoc}
+            click ={this.toggleButton('addLoc')}/>
+          <FilterButton
+            icon  ={<IconPay width={33} height={32}/>}
+            title ="Promociones"
+            active={this.state.promLoc}
+            click ={this.toggleButton('promLoc')}
+            titleStyle={{width: 60}}
+            rightSeparator={false}/>
+        </div>
       </div>
-    </div>;
+  </Swipeable>;
 }
