@@ -1,6 +1,8 @@
 import { createStore, combineReducers } from 'redux';
-import { markers } from './Locations';
+import { reducer as locations } from './Locations';
+
 
 export default createStore(
-  combineReducers({markers})
+  combineReducers({locations}),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

@@ -23,7 +23,7 @@ export class FilterMenu extends React.Component {
    */
   constructor(...props) {
     super(...props);
-    this.state = { active:false }
+    this.state = { active: false }
   }
   
   /**
