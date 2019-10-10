@@ -2,7 +2,7 @@
   {
     "idStore": "1",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "San Francisco 1621, Col del Valle Sur, 03100 Ciudad de México, CDMX.",
     "lat": 19.3723122,
@@ -41,7 +41,7 @@
   {
     "idStore":"2",
     "title":"Inbursa",
-    "iconLink": "assets/inbursa-pin.jpg",
+    "iconLink": "assets/inbursa-pin.png",
     "type": ["pay", "add-money"],
     "address": "Avenida Patriotismo 299, San Pedro de los Pinos, 03800 Ciudad de México, CDMX.",
     "lat": 19.393751,
@@ -51,7 +51,7 @@
   {
     "idStore":"3",
     "title":"Seven Eleven",
-    "iconLink": "assets/seven-eleven-pin.jpg",
+    "iconLink": "assets/seven-eleven-pin.png",
     "type": ["commerce", "add-money"],
     "address": "Av de los Insurgentes Sur 1870, Florida, 01030 Ciudad de México, CDMX.",
     "lat": 19.3546926,
@@ -61,7 +61,7 @@
   {
     "idStore":"4",
     "title": "Sanborns",
-    "iconLink": "assets/sanborns-pin.jpg",
+    "iconLink": "assets/sanborns-pin.png",
     "type": ["commerce"],
     "address": "Cto. Interior Mtro. José Vasconcelos 106, San Miguel Chapultepec I Secc, 11850 Ciudad de México, CDMX.",
     "lat": 19.4101111,
@@ -71,7 +71,7 @@
   {
     "idStore": "5",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "Blvd. Adolfo López Mateos 1701, Lomas de Plateros, 1480 Ciudad de México, CDMX.",
     "lat": 19.3696824,
@@ -81,7 +81,7 @@
   {
     "idStore": "6",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "Av. Universidad 936 A, Sta Cruz Atoyac, 03310 Ciudad de México, CDMX.",
     "lat": 19.3683049,
@@ -91,7 +91,7 @@
   {
     "idStore": "7",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "Calz. de Tlalpan 1037, Américas Unidas, 03500 Ciudad de México, CDMX.",
     "lat": 19.380356,
@@ -101,7 +101,7 @@
   {
     "idStore": "8",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "Av. Revolución 1083, Los Alpes, 01010 Ciudad de México, CDMX.",
     "lat": 19.3673187,
@@ -111,7 +111,7 @@
   {
     "idStore": "9",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "Av. Insurgentes Nte. 131, Buenavista, 06300 Ciudad de México, CDMX.",
     "lat": 19.4434817,
@@ -121,7 +121,7 @@
   {
     "idStore": "10",
     "title": "Walmart",
-    "iconLink": "assets/walmart-pin.jpg",
+    "iconLink": "assets/walmart-pin.png",
     "type": ["commerce"],
     "address": "Perif. Blvd. Manuel Ávila Camacho 491, Periodista, 11220 Ciudad de México, CDMX.",
     "lat": 19.4494404,
@@ -131,7 +131,7 @@
   {
     "idStore":"11",
     "title": "Inbursa",
-    "iconLink": "assets/inbursa-pin.jpg",
+    "iconLink": "assets/inbursa-pin.png",
     "type": ["add-money"],
     "address": "Perif. Blvd. Manuel Ávila Camacho 631, Periodista, 11220 Ciudad de México, CDMX.",
     "lat": 19.44933,
@@ -141,7 +141,7 @@
   {
     "idStore":"12",
     "title": "Inbursa",
-    "iconLink": "assets/inbursa-pin.jpg",
+    "iconLink": "assets/inbursa-pin.png",
     "type": ["pay","add-money"],
     "address": "Tennyson No. 120, Polanco, Reforma Polanco, 11560 Ciudad de México, CDMX.",
     "lat": 19.4319174,
@@ -151,7 +151,7 @@
   {
     "idStore":"13",
     "title": "Inbursa",
-    "iconLink": "assets/inbursa-pin.jpg",
+    "iconLink": "assets/inbursa-pin.png",
     "type": ["pay","add-money"],
     "address": "Avenida Patriotismo 299, San Pedro de los Pinos, 03800 Ciudad de México, CDMX.",
     "lat": 19.393751,
@@ -161,7 +161,7 @@
   {
     "idStore":"14",
     "title": "Inbursa",
-    "iconLink": "assets/inbursa-pin.jpg",
+    "iconLink": "assets/inbursa-pin.png",
     "type": ["pay","add-money"],
     "address": "San Luis Potosí 138, Roma Nte., 06700 Ciudad de México, CDMX.",
     "lat": 19.4135628,
@@ -171,7 +171,7 @@
   {
     "idStore":"15",
     "title": "Inbursa",
-    "iconLink": "assets/inbursa-pin.jpg",
+    "iconLink": "assets/inbursa-pin.png",
     "type": ["pay","add-money"],
     "address": "Eje 1 Nte. 259, Buenavista, 06350 Ciudad de México, CDMX.",
     "lat": 19.4489654,
@@ -181,7 +181,7 @@
   {
     "idStore":"16",
     "title":"Seven Eleven",
-    "iconLink": "assets/seven-eleven-pin.jpg",
+    "iconLink": "assets/seven-eleven-pin.png",
     "type": ["commerce", "add-money"],
     "address": "Av. Insurgentes Sur, Col del Valle Nte, 03103 Ciudad de México, CDMX.",
     "lat": 19.3549832,
@@ -191,7 +191,7 @@
   {
     "idStore":"17",
     "title":"Seven Eleven",
-    "iconLink": "assets/seven-eleven-pin.jpg",
+    "iconLink": "assets/seven-eleven-pin.png",
     "type": ["commerce", "add-money"],
     "address": "Av. Insurgentes Sur 499, Hipódromo, 06100 Ciudad de México, CDMX.",
     "lat": 19.403756,
@@ -201,7 +201,7 @@
   {
     "idStore":"18",
     "title":"Seven Eleven",
-    "iconLink": "assets/seven-eleven-pin.jpg",
+    "iconLink": "assets/seven-eleven-pin.png",
     "type": ["commerce", "add-money"],
     "address": "Av. José Martí 262, Escandón II Secc, 11800 Ciudad de México, CDMX.",
     "lat": 19.4006092,
@@ -211,7 +211,7 @@
   {
     "idStore":"19",
     "title":"Seven Eleven",
-    "iconLink": "assets/seven-eleven-pin.jpg",
+    "iconLink": "assets/seven-eleven-pin.png",
     "type": ["commerce", "add-money"],
     "address": "Gobernador José Guadalupe Covarrubias Esquina Calle Av Jalisco 5, Tacubaya, 11870 Ciudad de México, CDMX.",
     "lat": 19.4066365,
@@ -221,7 +221,7 @@
   {
     "idStore":"20",
     "title":"Seven Eleven",
-    "iconLink": "assets/seven-eleven-pin.jpg",
+    "iconLink": "assets/seven-eleven-pin.png",
     "type": ["commerce", "add-money"],
     "address": "entre Barrilaco y Monte Altai, Avenida Prado Norte 864, Lomas - Virreyes, Lomas de Chapultepec, 11000 Ciudad de México, CDMX.",
     "lat": 19.4275514,
@@ -231,7 +231,7 @@
   {
     "idStore":"21",
     "title": "Sanborns",
-    "iconLink": "assets/sanborns-pin.jpg",
+    "iconLink": "assets/sanborns-pin.png",
     "type": ["commerce"],
     "address": "Londres 130, Juárez, 06600 Ciudad de México, CDMX.",
     "lat": 19.4251117,
@@ -241,7 +241,7 @@
   {
     "idStore":"22",
     "title": "Sanborns",
-    "iconLink": "assets/sanborns-pin.jpg",
+    "iconLink": "assets/sanborns-pin.png",
     "type": ["commerce"],
     "address": "Calle Lago Zurich No. 245, Amp Granada, 11529 Ciudad de México, CDMX.",
     "lat": 19.4416454,
@@ -251,7 +251,7 @@
   {
     "idStore":"23",
     "title": "Sanborns",
-    "iconLink": "assets/sanborns-pin.jpg",
+    "iconLink": "assets/sanborns-pin.png",
     "type": ["commerce"],
     "address": "Av. Insurgentes Nte. 70, Sta María la Ribera, 06400 Ciudad de México, CDMX.",
     "lat": 19.4416454,
@@ -261,7 +261,7 @@
   {
     "idStore":"24",
     "title": "Sanborns",
-    "iconLink": "assets/sanborns-pin.jpg",
+    "iconLink": "assets/sanborns-pin.png",
     "type": ["commerce"],
     "address": "Eje 1 Pte, C. U. Benito Juárez, 06760 Ciudad de México, CDMX.",
     "lat": 19.4431262,
@@ -271,7 +271,7 @@
   {
     "idStore":"25",
     "title": "Sanborns",
-    "iconLink": "assets/sanborns-pin.jpg",
+    "iconLink": "assets/sanborns-pin.png",
     "type": ["commerce"],
     "address": "WORD TRADE CENTER, Montecito No. 38. 38, Nápoles, 03810 Ciudad de México, CDMX.",
     "lat": 19.393664,
