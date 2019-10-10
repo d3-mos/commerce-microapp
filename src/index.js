@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
  * @author Ricardo Bermúdez Bermúdez
  * @since Oct 3rd, 2019.
  */
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 serviceWorker.register();
 
 // If you want your app to work offline and load faster, you can change
