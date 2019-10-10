@@ -1,7 +1,9 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
-import { FilterMenu } from './StoresFilter/FilterMenu';
-import MapComponent   from './StoresMap/MapComponent'
+import store from './General/Store';
+import { FilterMenu } from './LocationsFilter/FilterMenu';
+import MapComponent   from './LocationsMap/MapComponent'
 
 
 /**
@@ -46,14 +48,16 @@ export class App extends React.Component {
 
   /** 
    * Render the main application layer.
+   * 
+   * @since Oct 9th, 2019. Add store object to Redux Provider component.
    */
   render = () => 
-    <React.Fragment>
+    <Provider store={store}>
       <MapComponent/>
       <div className="layout">
         <FilterMenu/>
       </div>
-    </React.Fragment>;
+    </Provider>;
 }
 
 //Check https://medium.com/bother7-blog/drag-and-drop-functionality-in-react-eaa4161a041d

@@ -9,8 +9,10 @@
     "ol": "^6.0.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-redux": "^7.1.1",
     "react-scripts": "3.1.2",
-    "react-swipeable": "^5.4.0"
+    "react-swipeable": "^5.4.0",
+    "redux": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "redux-devtools": "^3.5.0"
   }
 }
