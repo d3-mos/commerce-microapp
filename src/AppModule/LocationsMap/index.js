@@ -30,6 +30,26 @@ const locationMarker = ({idStore, lat, lng, iconLink}, google) =>
       scaledSize: new google.maps.Size(64,64)
     }} />;
 
+/**
+ * This function apply the filters over several locations.
+ * 
+ * @author Ricardo Bermúdez Bermúdez
+ * @since  Oct 10th, 2019.
+ * 
+ * @param   {Array<Object>} locations Locations to apply the filter 
+ * @param   {Set<string>} filters Array of filter keys
+ * @returns {Arrayz<Object>} All locations when filters set is empty or
+ *                           locations filtered when there are filter keys. 
+ */
+const applyFilters = (locations, filters) =>
+  filters.size 
+  ?locations.reduce( (acc, location) => 
+     location.type.reduce( (flag, type) => flag || filters.has(type), false)
+     ?acc.concat(location)
+     :acc,
+   [])
+  :locations;
+
 /** 
  * This component render the map and locations stored as markers.
  * 
@@ -41,17 +61,27 @@ const locationMarker = ({idStore, lat, lng, iconLink}, google) =>
  * @returns {React.Component<Map>} Google maps container.
  */
 const MapContainer = ({
-  locations, center=defaultCenter, google
+  locations, filters, center=defaultCenter, google
 }) => 
   <Map className="map"
     disableDefaultUI={true} 
     google={google}
     zoom={12}
     initialCenter={center}>
-
-      {locations.map(location => locationMarker(location, google))}
+      {applyFilters(locations, filters).map(location => locationMarker(location, google))}
   </Map>;
 
+/**
+ * With this wrapper Google API bind the "google" object. 
+ */
 const MapWrapper = GoogleApiWrapper({apiKey})(MapContainer);
 
-export default connect(({locations}) => ({locations}))(MapWrapper);
+/**
+ * Function to map state storage to props over a component.
+ * To more information see the Redux documentation.
+ * 
+ * @link https://es.redux.js.org/docs/basico/uso-con-react.html 
+ */
+const mapState = ({locations, filters}) => ({locations, filters});
+
+export default connect(mapState)(MapWrapper);

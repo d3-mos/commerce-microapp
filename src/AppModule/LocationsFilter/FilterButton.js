@@ -31,18 +31,20 @@ export class FilterButton extends React.Component {
      * @since Oct 9th, 2019.
      */
   onPressActive() {
-    this.setState({active: !this.state.active});    
-
-    this.state.active 
-    && typeof this.props.click === 'function'
-    && this.props.click(); 
+    let active = !this.state.active;
+    let { clickActive, clickInactive } = this.props;
+    
+    this.setState({active});
+    active 
+    ? typeof clickActive   === 'function' && clickActive()
+    : typeof clickInactive === 'function' && clickInactive();
   }
   
   /**
-     * Render the button.
-     * 
-     * @since Oct 9th, 2019.
-     */
+   * Render the button.
+   * 
+   * @since Oct 9th, 2019.
+   */
   render() {
     let { icon, title, titleStyle, separator=true } = this.props;
     
