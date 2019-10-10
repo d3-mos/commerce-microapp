@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { FilterMenu } from './FilterMenu';
 import { push } from '../General/Store/Locations';
+import * as FilterService from './FilterService';
+
 
 /**
  * This class represents the Locations Filter Component and manage the state
@@ -21,6 +23,9 @@ class LocationsFilter extends React.Component {
   componentDidMount() {
     let { push } = this.props;
 
+    //FilterService
+    //.getLocations()
+    //.then(x => console.log(x))
     setTimeout(() => push([-99.1439732,19.4357385]), 1000);
     setTimeout(() => push([-99.1468056,19.436907]),  2000);
     setTimeout(() => push([-99.1405306,19.4380755]), 3000);
