@@ -19,12 +19,6 @@
   background: $primary_color;
   border-radius: 24px 24px 0 0;
   box-shadow: $card_shadow;
-
-  /** [2] */
-  position: absolute;
-  bottom: -112px;
-  transition: bottom 0.2s ease-in-out 0s;
-  &.--is-active { bottom: 0px; }
 }
 
   /**
@@ -34,7 +28,7 @@
    */
   .filter__btn-drag {
     @include size(57.4px, 2.9px);
-    margin-top: 18px;
+    margin-top: 20px;
     /** [1] */
     background: $secondary_light_color;
     border-radius: 2px;

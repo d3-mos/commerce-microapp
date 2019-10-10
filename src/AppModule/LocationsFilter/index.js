@@ -30,7 +30,10 @@ class LocationsFilter extends React.Component {
   /**
    * Render the filter menu view.
    */
-  render = () => <FilterMenu/>
+  render = () => 
+    <FilterMenu
+      swipeUp={this.props.swipeUp}
+      swipeDown={this.props.swipeDown}/>
 } 
 
 export default connect(null, {push})(LocationsFilter)
