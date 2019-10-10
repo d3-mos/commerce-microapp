@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { FilterMenu } from './FilterMenu';
+import FilterMenu from './FilterMenu';
 import { push } from '../General/Store/Locations';
 import * as FilterService from './FilterService';
 

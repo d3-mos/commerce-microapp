@@ -1,10 +1,13 @@
 import React from 'react';
 import { Swipeable }    from 'react-swipeable';
+import { connect } from 'react-redux';
 
 import { FilterButton } from './FilterButton'
 import { IconPay }      from './FilterSVGIcons/IconPay';
 import { IconCash }     from './FilterSVGIcons/IconCash';
 import { IconAddMoney } from './FilterSVGIcons/IconAddMoney';
+import { addFilter, removeFilter } from './../General/Store/Filter';
+import LocationTypes from './LocationTypes';
 
 
 /**
@@ -14,7 +17,7 @@ import { IconAddMoney } from './FilterSVGIcons/IconAddMoney';
  * @since  7th Oct, 2019.
  * @since  8th Oct, 2019. Change the component function definition by class.
  */
-export class FilterMenu extends React.Component {
+class FilterMenu extends React.Component {
 
   /**
    * constructor method. Set state of filter to manage the buttons state.
@@ -37,6 +40,21 @@ export class FilterMenu extends React.Component {
   downMenu = () => this.setState({active: false});
 
   /**
+   * This method build an properties object that will pass as properties
+   * arguments to FilterButton component to add or remove an filter from
+   * application state.
+   * 
+   * @since Oct 10th, 2019.
+   * 
+   * @param   {string} filterType Constant key of filter.
+   * @returns {Object} Object with click events as properties.
+   */
+  filterActions = (filterType) => ({
+    clickActive:   ()=> this.props.addFilter(filterType),
+    clickInactive: ()=> this.props.removeFilter(filterType)
+  })
+
+  /**
    * Render the filter component.
    * 
    * @since Oct 8th, 2019.
@@ -52,19 +70,25 @@ export class FilterMenu extends React.Component {
         <div className="filter__btn-bar">
           <FilterButton 
             icon  ={<IconPay/>}
-            title ="Paga en Comercios"/>
+            title ="Paga en Comercios"
+            {...this.filterActions(LocationTypes.COMMERCE)}/>
           <FilterButton
             icon  ={<IconCash/>}
-            title ="Retirar"/>
+            title ="Retirar"
+            {...this.filterActions(LocationTypes.GET_CASH)}/>
           <FilterButton
             icon  ={<IconAddMoney/>}
-            title ="Agregar Fondos"/>
+            title ="Agregar Fondos"
+            {...this.filterActions(LocationTypes.ADD_CREDIT)}/>
           <FilterButton
             icon  ={<IconPay/>}
             title ="Promociones"
             titleStyle={{width: 60}}
-            separator={false}/>
+            separator={false}
+            {...this.filterActions(LocationTypes.PROMOTIONS)}/>
         </div>
       </div>
     </Swipeable>;
 }
+
+export default connect(null, {addFilter, removeFilter})(FilterMenu);
