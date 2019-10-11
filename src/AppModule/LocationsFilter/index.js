@@ -21,16 +21,21 @@ class LocationsFilter extends React.Component {
    */
   componentDidMount() {
     let { push } = this.props;
-
-    FilterService
-    .getLocations()
-    .then(locations => locations.forEach( location => push(location) ));
+    setTimeout(
+      ()=>
+        FilterService
+        .getLocations()
+        .then(locations => locations.forEach( location => push(location) ))
+    , 1000)
   }
   
   /**
    * Render the filter menu view.
    */
-  render = () => <FilterMenu/>
+  render = () => 
+    <FilterMenu
+      swipeUp={this.props.swipeUp}
+      swipeDown={this.props.swipeDown}/>
 } 
 
 export default connect(null, {push})(LocationsFilter)

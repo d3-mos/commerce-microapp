@@ -60,8 +60,10 @@ class FilterMenu extends React.Component {
    * @since Oct 8th, 2019.
    */
   render = () =>
-    <Swipeable onSwipedDown={()=>this.downMenu()} onSwipedUp={()=>this.upMenu()}>
-      <div className={`filter ${this.state.active?'--is-active':''}`}>
+    <Swipeable
+     onSwipedDown={this.props.swipeDown}
+     onSwipedUp={this.props.swipeUp}>
+      <div className={`filter`}>
         <div className="filter__btn-drag"/>
         <p className="text--abstract">
           Selecciona la opción que quieres

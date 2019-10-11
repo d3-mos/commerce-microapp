@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import { GOOGLE_MAPS_API_KEY as apiKey } from '../../env'
 
+import { GOOGLE_MAPS_API_KEY as apiKey } from '../../env'
+import { showLocationDetails } from './../General/Store/LocationDetails'
+import { LocationMarker } from './LocationMarker'
+import { applyFilters } from './../LocationsFilter/FilterAppAction'
 
 /**
  * Represent the coordinates of Mexico City (Alameda central).
@@ -13,42 +16,6 @@ import { GOOGLE_MAPS_API_KEY as apiKey } from '../../env'
  */
 const defaultCenter = {lat: 19.4357385, lng: -99.1439732};
 
-/**
- * Represent the commerce marker.
- * 
- * @author Ricardo Bermúdez Bermúdez
- * @since  Oct 10, 2019.
- * @returns {React.Component<Marker>}
- */
-const locationMarker = ({idStore, lat, lng, iconLink}, google) => 
-  <Marker
-    key = {idStore}
-    position={{lat,lng}}
-    icon={{  
-      url: iconLink,
-      anchor: new google.maps.Point(32,32),
-      scaledSize: new google.maps.Size(64,64)
-    }} />;
-
-/**
- * This function apply the filters over several locations.
- * 
- * @author Ricardo Bermúdez Bermúdez
- * @since  Oct 10th, 2019.
- * 
- * @param   {Array<Object>} locations Locations to apply the filter 
- * @param   {Set<string>} filters Array of filter keys
- * @returns {Arrayz<Object>} All locations when filters set is empty or
- *                           locations filtered when there are filter keys. 
- */
-const applyFilters = (locations, filters) =>
-  filters.size 
-  ?locations.reduce( (acc, location) => 
-     location.type.reduce( (flag, type) => flag || filters.has(type), false)
-     ?acc.concat(location)
-     :acc,
-   [])
-  :locations;
 
 /** 
  * This component render the map and locations stored as markers.
@@ -61,15 +28,35 @@ const applyFilters = (locations, filters) =>
  * @returns {React.Component<Map>} Google maps container.
  */
 const MapContainer = ({
-  locations, filters, center=defaultCenter, google
+  locations, filters, center=defaultCenter, google, showLocationDetails
 }) => 
-  <Map className="map"
+  <Map
+   styles={mapStyles}
+   className="map"
+    maxZoom={16}
+    minZoom={11}
     disableDefaultUI={true} 
     google={google}
     zoom={12}
     initialCenter={center}>
-      {applyFilters(locations, filters).map(location => locationMarker(location, google))}
+      {applyFilters(locations, filters).map(
+        location => LocationMarker(location, google, showLocationDetails)
+      )}
   </Map>;
+
+/**
+ * This styles quit other places to show correctly the locations of commerces.
+ * See the GitHug comment to see the solution.
+ * 
+ * @link https://github.com/tomchentw/react-google-maps/issues/749
+ */
+const mapStyles = [
+  {
+    featureType: "poi",
+    elementType: "labels.icon",
+    stylers: [ { visibility: "off" } ]
+  }
+];
 
 /**
  * With this wrapper Google API bind the "google" object. 
@@ -82,6 +69,8 @@ const MapWrapper = GoogleApiWrapper({apiKey})(MapContainer);
  * 
  * @link https://es.redux.js.org/docs/basico/uso-con-react.html 
  */
-const mapState = ({locations, filters}) => ({locations, filters});
+const mapState = ({
+  locations, filters, 
+}) => ({locations, filters });
 
-export default connect(mapState)(MapWrapper);
+export default connect(mapState, {showLocationDetails})(MapWrapper);
