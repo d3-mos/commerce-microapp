@@ -28,7 +28,7 @@ let googleRef         = {};
 let lastLocation      = null;
 
 store.subscribe(() => {
-    let {locationDetails}= store.getState();
+    let {locationDetails} = store.getState();
     
     if (locationDetails in markersReferences) {
         if (lastLocation) lastLocation.marker.setAnimation(null);

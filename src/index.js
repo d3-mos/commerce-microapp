@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 
+import store from './AppModule/General/Store';
 import './AppDesign/main.scss'
-import { App } from './AppModule/App';
+import App from './AppModule/App';
 import * as serviceWorker from './serviceWorker';
 
 /**
@@ -13,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
  * @author Ricardo Bermúdez Bermúdez
  * @since Oct 3rd, 2019.
  */
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 serviceWorker.register();
 
 // If you want your app to work offline and load faster, you can change

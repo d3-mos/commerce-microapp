@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import FilterMenu from './FilterMenu';
-import { push } from '../General/Store/Locations';
+import { update } from '../General/Store/Locations';
 import * as FilterService from './FilterService';
 
 
@@ -20,12 +20,12 @@ class LocationsFilter extends React.Component {
    * Recover all commerce locations to show to user.
    */
   componentDidMount() {
-    let { push } = this.props;
+    let { update } = this.props;
     setTimeout(
       ()=>
         FilterService
         .getLocations()
-        .then(locations => locations.forEach( location => push(location) ))
+        .then(locations => update(locations))
     , 1000)
   }
   
@@ -38,4 +38,4 @@ class LocationsFilter extends React.Component {
       swipeDown={this.props.swipeDown}/>
 } 
 
-export default connect(null, {push})(LocationsFilter)
+export default connect(null, {update})(LocationsFilter)

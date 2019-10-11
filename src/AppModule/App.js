@@ -1,10 +1,11 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 
-import store from './General/Store';
+
 import LocationsMap    from './LocationsMap'
 import LocationsFilter from './LocationsFilter'
 import DetailsCard     from './LocationDetails/DetailsCard';
+import { updateUserPos } from './General/Store/UserPosition'
 
 
 /**
@@ -14,7 +15,7 @@ import DetailsCard     from './LocationDetails/DetailsCard';
  * @since   Oct 4th, 2019.
  * @since   Oct 9th, 2019. Redefine as function component.
  */
-export class App extends React.Component{
+class App extends React.Component{
 
   constructor(...props) {
     super(...props);
@@ -26,13 +27,26 @@ export class App extends React.Component{
     swipeDown: () => this.setState({layoutDown: true}),
   })
 
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.props.updateUserPos);
+    } else {
+      console.log( "Geolocation is not supported by this browser.");
+    }
+  }
+
+  componentDidMount() {
+    this.getLocation();
+  }
 
   render = () => 
-    <Provider store={store}>
+    <React.Fragment>
       <LocationsMap/>
       <div className={`layout ${this.state.layoutDown?'--down':''}`}>
         <LocationsFilter {...this.swipeActions()}/>
         <DetailsCard/>
       </div>
-    </Provider>;
+    </React.Fragment>;
 }
+
+export default connect(null, {updateUserPos})(App);
