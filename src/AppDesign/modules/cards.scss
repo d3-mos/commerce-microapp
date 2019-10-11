@@ -3,10 +3,11 @@ $card_shadow: 0 0 29px 0 $light_shadow_color;
 
 .location-details {
   /** Display layout and size. */
-  @include size(90vw, 95px);
+  @include size(90vw, 100px);
   @include layout-flex(column, center);
 
   /** Design. */
+  max-width: 600px;
   background: white;
   margin-bottom: 20px;
   box-shadow: $card_shadow;
@@ -15,27 +16,27 @@ $card_shadow: 0 0 29px 0 $light_shadow_color;
   /** Animation over swipe. */
   position: relative;
   left: 0;
-  transition: left 0.18s ease-out 0.18s;
+  transition: left 0.3s ease-out 0.3s;
 
   &.--inactive {
     transition: 
-      left 0.18s ease-out 0s,
-      height 0s ease-out 0.18s,
-      margin 0s ease-out 0.18s;
+      left 0.3s ease-out 0s,
+      height 0s ease-out 0.3s,
+      margin 0s ease-out 0.3s;
     left: 100vw;
     height: 0;
     margin-bottom: 0;
   }
 
   .text--content {
-    width: 95%;
+    width: 92%;
     margin-top: 3%;
   }
 
   .button.--main {
     margin: {
-      right: 3%;
-      top: 2.5%;
+      right: 4%;
+      top: 4%;
     }
     align-self: flex-end;
   }
@@ -44,6 +45,6 @@ $card_shadow: 0 0 29px 0 $light_shadow_color;
     @include size(97px, 27px);
     position: absolute;
     top: 15%;
-    left: 2.5%;
+    left: 4%;
   }
 }

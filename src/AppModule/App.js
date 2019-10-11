@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './General/Store';
 import LocationsMap    from './LocationsMap'
 import LocationsFilter from './LocationsFilter'
-import { DetailsCard } from './LocationDetails/DetailsCard';
+import DetailsCard     from './LocationDetails/DetailsCard';
 
 
 /**

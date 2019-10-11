@@ -21,10 +21,12 @@ class LocationsFilter extends React.Component {
    */
   componentDidMount() {
     let { push } = this.props;
-
-    FilterService
-    .getLocations()
-    .then(locations => locations.forEach( location => push(location) ));
+    setTimeout(
+      ()=>
+        FilterService
+        .getLocations()
+        .then(locations => locations.forEach( location => push(location) ))
+    , 1000)
   }
   
   /**
