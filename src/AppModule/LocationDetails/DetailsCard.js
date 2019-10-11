@@ -18,7 +18,7 @@ export class DetailsCard extends React.Component{
       let location = locations.filter(l=>l.idStore === locationDetails)[0];
       
       return <React.Fragment>
-       <img className="commerce-logo" src={location.logoLink}/>
+       <img className="commerce-logo" alt={location.title} src={location.logoLink}/>
        <button className="button --main">Ir Ahora</button>
        <p className="text--content">{location.address}</p>
       </React.Fragment>

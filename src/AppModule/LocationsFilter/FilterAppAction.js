@@ -1,4 +1,8 @@
 
+function radius_threshold (pos, user) {
+  let distance = ((pos.lat-user.lat)**2+(pos.lng-user.lng)**2)**0.5;
+  return distance<0.025
+}
 /**
  * This function apply the filters over several locations.
  * 
@@ -10,11 +14,16 @@
  * @returns {Arrayz<Object>} All locations when filters set is empty or
  *                           locations filtered when there are filter keys. 
  */
-export const applyFilters = (locations, filters) =>
+export const applyFilters = (locations, filters, userPosition) =>
   filters.size 
   ?locations.reduce( (acc, location) => 
      location.type.reduce( (flag, type) => flag || filters.has(type), false)
+     && radius_threshold(location, userPosition)
      ?acc.concat(location)
      :acc,
    [])
-  :locations;
+  :locations.reduce( (acc, location) => 
+    (radius_threshold(location, userPosition))
+    ?acc.concat(location)
+    :acc,
+  []);
