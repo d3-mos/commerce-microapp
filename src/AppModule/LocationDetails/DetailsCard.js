@@ -15,7 +15,7 @@ function mapsSelector({lat,lng}) {
     {window.open(`https://maps.google.com/maps?daddr=${lat},${lng}&amp;ll=`);}
 }
 
-export class DetailsCard extends React.Component{
+export class DetailsCard extends React.Component {
   
   constructor (...props) {
     super(...props);
@@ -35,6 +35,7 @@ export class DetailsCard extends React.Component{
         <p className="text--content">{location.address}</p>
       </React.Fragment>
     }
+
     return null;
   }
   
