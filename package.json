@@ -1,6 +1,7 @@
 {
   "name": "ua-mapa-openlayers",
   "version": "0.1.0",
+  "homepage": "http://gm-map-stores.citi.d3-mos.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.5.0",
