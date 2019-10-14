@@ -16,13 +16,13 @@ $card_shadow: 0 0 29px 0 $light_shadow_color;
   /** Animation over swipe. */
   position: relative;
   left: 0;
-  transition: left 0.3s ease-out 0.3s;
+  transition: left 0.18s ease-out 0.18s;
 
   &.--inactive {
     transition: 
-      left 0.3s ease-out 0s,
-      height 0s ease-out 0.3s,
-      margin 0s ease-out 0.3s;
+      left 0.18s ease-out 0s,
+      height 0s ease-out 0.18s,
+      margin 0s ease-out 0.18s;
     left: 100vw;
     height: 0;
     margin-bottom: 0;
